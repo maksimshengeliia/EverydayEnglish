@@ -1,2 +1,9 @@
 # EverydayEnglish
-Application for learnig English!
+Application for learning English!
+
+## О приложении
+- 
+
+
+## Архитектура приложения
+- Clean Architecture
