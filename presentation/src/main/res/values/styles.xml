@@ -8,4 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/allerta</item>
+    </style>
+
+    <style name="AppTextStyle.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/title_text</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+    </style>
+
+    <style name="AppTextStyle.Small">
+        <item name="android:textSize">@dimen/small_text</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+    </style>
 </resources>
