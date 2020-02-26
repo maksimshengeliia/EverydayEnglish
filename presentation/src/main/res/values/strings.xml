@@ -12,5 +12,5 @@
     <string name="navigation_drawer_close">closed</string>
     <string name="radio_all">all</string>
     <string name="radio_new">new</string>
-    <string name="radio_solved">solved</string>
+    <string name="radio_started">started</string>
 </resources>

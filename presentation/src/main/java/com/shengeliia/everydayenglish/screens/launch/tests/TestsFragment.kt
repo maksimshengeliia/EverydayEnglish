@@ -4,10 +4,32 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.shengeliia.domain.models.Test
 import com.shengeliia.everydayenglish.R
 
 class TestsFragment() : Fragment() {
+
+    private lateinit var testsAdapter: TestsAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        testsAdapter = TestsAdapter()
+        testsAdapter.onItemClickListener = object : TestsAdapter.OnItemClickListener {
+            override fun onItemClick() {
+                Toast.makeText(activity, "Click!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        testsAdapter.onItemLongClickListener = object : TestsAdapter.OnItemLongClickListener {
+            override fun onItemLongClick() {
+                Toast.makeText(activity, "LongClick!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -15,6 +37,17 @@ class TestsFragment() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_tests, container, false)
+        val recyclerView: RecyclerView = view.findViewById(R.id.testFragList)
+        recyclerView.apply {
+            adapter = testsAdapter
+            layoutManager = LinearLayoutManager(activity)
+        }
+        testsAdapter.updateData(listOf(
+            Test(1, "masha", 1, 3),
+            Test(1, "tasha", 1, 3),
+            Test(1, "lena", 1, 3),
+            Test(1, "ficha", 1, 3)
+        ))
         return view
     }
 

@@ -9,7 +9,7 @@
         android:id="@+id/radio_all"
         style="@style/RadioButton"
         android:textColor="@color/colorPrimary"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:checked="true"
@@ -19,17 +19,17 @@
         android:id="@+id/radio_new"
         style="@style/RadioButton"
         android:textColor="@color/colorPrimary"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/radio_new" />
 
     <RadioButton
-        android:id="@+id/radio_solved"
+        android:id="@+id/radio_started"
         style="@style/RadioButton"
         android:textColor="@color/colorPrimary"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/radio_solved" />
+        android:text="@string/radio_started" />
 </RadioGroup>

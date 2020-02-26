@@ -28,10 +28,11 @@
 
     <style name="RadioButton">
         <item name="android:gravity">center</item>
-        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_margin">15dp</item>
         <item name="android:padding">5dp</item>
         <item name="android:button">@android:color/transparent</item>
         <item name="android:background">@drawable/radio_states</item>
+        <item name="android:stateListAnimator">@animator/radiobar_selector</item>
         <item name="android:textSize">@dimen/small_text</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/black</item>
