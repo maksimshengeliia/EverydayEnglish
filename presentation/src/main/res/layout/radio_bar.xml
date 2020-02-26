@@ -8,25 +8,28 @@
     <RadioButton
         android:id="@+id/radio_all"
         style="@style/RadioButton"
+        android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:checked="true"
-        android:text="all" />
+        android:text="@string/radio_all" />
 
     <RadioButton
         android:id="@+id/radio_new"
         style="@style/RadioButton"
+        android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="new" />
+        android:text="@string/radio_new" />
 
     <RadioButton
         android:id="@+id/radio_solved"
         style="@style/RadioButton"
+        android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="solved" />
+        android:text="@string/radio_solved" />
 </RadioGroup>

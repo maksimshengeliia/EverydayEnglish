@@ -13,12 +13,13 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".screens.test.TestActivity" />
-        <activity android:name=".screens.list.ListActivity">
+        <activity android:name=".screens.intro.IntroActivity" />
+        <activity android:name=".screens.quiz.QuizActivity" />
+        <activity
+            android:name=".screens.launch.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
+                <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
