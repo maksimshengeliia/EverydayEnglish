@@ -11,15 +11,20 @@ class TestGame(private val repository: Repository, private val onQuestionChangeL
 
     fun initTest(idTest: Int) {
         questions = repository.getQuestions(idTest)
+        onQuestionChangeListener.onStartTest(questions.size)
     }
 
-    fun onAnswer(question: Question, answer: Int) {
-        if (question.answerRight == answer) {
+    fun answer(question: Question, answer: Int): Boolean {
+        return if (question.answerRight == answer) {
             points.add(true)
+            true
         } else {
             points.add(false)
+            false
         }
+    }
 
+    fun nextQuestion() {
         if (pointer >= questions.size) {
             onQuestionChangeListener.onEndTest(calculateAnswers())
         } else {
@@ -47,5 +52,7 @@ class TestGame(private val repository: Repository, private val onQuestionChangeL
         fun onEndTest(passed: Boolean)
 
         fun onNextQuestion(question: Question)
+
+        fun onStartTest(qNum: Int)
     }
 }
