@@ -6,4 +6,6 @@
 
     <color name="colorAccentSecondary">#AB47BC</color>
     <color name="colorGold">#FFCA28</color>
+    <color name="colorLightSilver">#F7FAFF</color>
+    <color name="colorLightGold">#FFF8F1</color>
 </resources>

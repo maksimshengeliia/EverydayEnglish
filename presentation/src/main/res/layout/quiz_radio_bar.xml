@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RadioButton
+        android:id="@+id/quizAnswer1"
+        style="@style/AppTextStyle.QuizButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <RadioButton
+        android:id="@+id/quizAnswer2"
+        style="@style/AppTextStyle.QuizButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <RadioButton
+        android:id="@+id/quizAnswer3"
+        style="@style/AppTextStyle.QuizButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+</RadioGroup>

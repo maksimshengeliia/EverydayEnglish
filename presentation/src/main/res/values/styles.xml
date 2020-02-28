@@ -15,6 +15,14 @@
         <item name="android:fontFamily">@font/allerta</item>
     </style>
 
+    <style name="AppTextStyle.Light">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="AppTextStyle.Dark">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
     <style name="AppTextStyle.Title">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/title_text</item>
@@ -26,20 +34,40 @@
         <item name="android:textColor">@android:color/darker_gray</item>
     </style>
 
-    <style name="RadioButton">
+    <style name="AppTextStyle.SimpleButton">
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:stateListAnimator">@animator/button_animator</item>
+        <item name="android:textSize">@dimen/small_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AppTextStyle.FilterButton">
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">15dp</item>
         <item name="android:padding">5dp</item>
         <item name="android:button">@android:color/transparent</item>
-        <item name="android:background">@drawable/radio_states</item>
-        <item name="android:stateListAnimator">@animator/radiobar_selector</item>
+        <item name="android:background">@drawable/filter_btn_states</item>
+        <item name="android:stateListAnimator">@animator/radio_animator</item>
         <item name="android:textSize">@dimen/small_text</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
 
-    <style name="AppTextStyle.Dark">
-        <item name="android:textColor">@android:color/white</item>
+    <style name="AppTextStyle.QuizButton">
+        <item name="android:gravity">start</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:padding">7dp</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:background">@drawable/quiz_btn_states</item>
+        <item name="android:stateListAnimator">@animator/radio_animator</item>
+        <item name="android:textSize">@dimen/small_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

@@ -1,5 +1,6 @@
 package com.shengeliia.everydayenglish.screens.launch.tests
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.shengeliia.domain.models.Test
 import com.shengeliia.everydayenglish.R
+import com.shengeliia.everydayenglish.screens.quiz.QuizActivity
 
 class TestsFragment() : Fragment() {
 
@@ -19,13 +21,15 @@ class TestsFragment() : Fragment() {
         super.onCreate(savedInstanceState)
         testsAdapter = TestsAdapter()
         testsAdapter.onItemClickListener = object : TestsAdapter.OnItemClickListener {
-            override fun onItemClick() {
-                Toast.makeText(activity, "Click!", Toast.LENGTH_SHORT).show()
+            override fun onItemClick(testId: Int) {
+                val intent = Intent(activity, QuizActivity::class.java)
+                intent.putExtra(QuizActivity.TEST_ID, testId)
+                startActivity(intent)
             }
         }
 
         testsAdapter.onItemLongClickListener = object : TestsAdapter.OnItemLongClickListener {
-            override fun onItemLongClick() {
+            override fun onItemLongClick(testId: Int) {
                 Toast.makeText(activity, "LongClick!", Toast.LENGTH_SHORT).show()
             }
         }
@@ -44,9 +48,14 @@ class TestsFragment() : Fragment() {
         }
         testsAdapter.updateData(listOf(
             Test(1, "masha", 1, 3),
-            Test(1, "tasha", 1, 3),
-            Test(1, "lena", 1, 3),
-            Test(1, "ficha", 1, 3)
+            Test(2, "tasha", 1, 3),
+            Test(3, "lena", 1, 3),
+            Test(4, "ficha", 1, 3),
+            Test(5, "ficha", 1, 3),
+            Test(6, "ficha", 1, 3),
+            Test(7, "ficha", 1, 3),
+            Test(8, "ficha", 1, 3),
+            Test(9, "ficha", 1, 3)
         ))
         return view
     }

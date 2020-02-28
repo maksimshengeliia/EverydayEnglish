@@ -13,7 +13,6 @@ import com.shengeliia.domain.State
 import com.shengeliia.domain.models.Test
 import com.shengeliia.domain.validateData
 import com.shengeliia.everydayenglish.R
-import kotlinx.android.synthetic.main.radio_bar.view.*
 
 class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), RadioGroup.OnCheckedChangeListener {
 
@@ -41,6 +40,7 @@ class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), Radio
 
     override fun onBindViewHolder(holder: TestsViewHolder, position: Int) {
         val test = currentData[position]
+        holder.testId = test.id
         holder.title.text = test.name
         holder.progress.text = "${test.solved}/${test.count}"
     }
@@ -54,11 +54,11 @@ class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), Radio
     }
 
     interface OnItemClickListener {
-        fun onItemClick()
+        fun onItemClick(testId: Int)
     }
 
     interface OnItemLongClickListener {
-        fun onItemLongClick()
+        fun onItemLongClick(testId: Int)
     }
 
     override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
@@ -84,12 +84,13 @@ class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), Radio
         val icon: ImageView = view.findViewById(R.id.testProgressIcon)
         val root: ConstraintLayout = view.findViewById(R.id.testRoot)
 
+        var testId: Int = 0
         init {
             view.setOnClickListener {
-                onItemClickListener?.onItemClick()
+                onItemClickListener?.onItemClick(testId)
             }
             view.setOnLongClickListener {
-                onItemLongClickListener?.onItemLongClick()
+                onItemLongClickListener?.onItemLongClick(testId)
                 true
             }
         }

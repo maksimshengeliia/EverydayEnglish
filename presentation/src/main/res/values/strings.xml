@@ -13,4 +13,7 @@
     <string name="radio_all">all</string>
     <string name="radio_new">new</string>
     <string name="radio_started">started</string>
+    <string name="answer_button">Answer</string>
+    <string name="try_again_button">try again</string>
+    <string name="go_main_menu_button">go to main menu</string>
 </resources>
