@@ -1,4 +1,4 @@
 package com.shengeliia.everydayenglish.screens.launch.tests
 
-class TestsPresenter {
+class TestsPresenter : TestsContract.PresenterMVP {
 }

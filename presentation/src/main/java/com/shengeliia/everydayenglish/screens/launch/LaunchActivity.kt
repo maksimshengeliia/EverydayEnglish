@@ -80,7 +80,7 @@ class LaunchActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentHolder, fragment, tag)
             .addToBackStack(tag)
-            .commit().toString()
+            .commit()
     }
 
     override fun onBackPressed() {

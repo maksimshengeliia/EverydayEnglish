@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.shengeliia.everydayenglish.R
 
-class IntroActivity : AppCompatActivity() {
+class IntroActivity : AppCompatActivity(), IntroContract.ViewMVP {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.shengeliia.everydayenglish.R
 
-class BookmarksFragment : Fragment() {
+class BookmarksFragment : Fragment(), BookmarksContract.ViewMVP {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

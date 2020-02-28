@@ -1,4 +1,4 @@
 package com.shengeliia.everydayenglish.screens.launch.settings
 
-class SettingsPresenter {
+class SettingsPresenter : SettingsContract.PresenterMVP {
 }

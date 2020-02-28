@@ -9,9 +9,9 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.shengeliia.domain.State
+import com.shengeliia.domain.cases.State
 import com.shengeliia.domain.models.Test
-import com.shengeliia.domain.validateData
+import com.shengeliia.domain.cases.validateData
 import com.shengeliia.everydayenglish.R
 
 class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), RadioGroup.OnCheckedChangeListener {
@@ -46,7 +46,7 @@ class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), Radio
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestsViewHolder {
-        return TestsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.test_item, parent, false))
+        return TestsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_test, parent, false))
     }
 
     fun updateData(list: List<Test>) {

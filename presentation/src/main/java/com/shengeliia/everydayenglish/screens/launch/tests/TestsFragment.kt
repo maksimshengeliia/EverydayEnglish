@@ -13,7 +13,7 @@ import com.shengeliia.domain.models.Test
 import com.shengeliia.everydayenglish.R
 import com.shengeliia.everydayenglish.screens.quiz.QuizActivity
 
-class TestsFragment() : Fragment() {
+class TestsFragment() : Fragment(), TestsContract.ViewMVP {
 
     private lateinit var testsAdapter: TestsAdapter
 

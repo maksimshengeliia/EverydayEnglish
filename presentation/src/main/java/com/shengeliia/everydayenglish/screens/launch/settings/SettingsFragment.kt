@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.shengeliia.everydayenglish.R
 
-class SettingsFragment : Fragment() {
+class SettingsFragment : Fragment(), SettingsContract.ViewMVP {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

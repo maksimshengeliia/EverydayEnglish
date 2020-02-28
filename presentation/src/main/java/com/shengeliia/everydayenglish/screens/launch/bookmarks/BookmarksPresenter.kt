@@ -1,4 +1,4 @@
 package com.shengeliia.everydayenglish.screens.launch.bookmarks
 
-class BookmarksPresenter {
+class BookmarksPresenter : BookmarksContract.PresenterMVP {
 }
