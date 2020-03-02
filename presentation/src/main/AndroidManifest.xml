@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".screens.intro.IntroActivity" />
+        <activity
+            android:name=".screens.intro.IntroActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity android:name=".screens.quiz.QuizActivity" />
         <activity
             android:name=".screens.launch.LaunchActivity">

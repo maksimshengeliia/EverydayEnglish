@@ -11,17 +11,17 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/navHeaderImage"
+        android:id="@+id/launchNavHeaderIcon"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="16dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:contentDescription="@string/description_header_icon"
         android:src="@mipmap/app_icon_round"
-        app:layout_constraintBottom_toTopOf="@+id/navHeaderPointsIcon"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/navHeaderName"
+        android:id="@+id/launchNavHeaderName"
         style="@style/AppTextStyle.Dark"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -29,27 +29,8 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text=""
         android:textSize="@dimen/title_text"
-        app:layout_constraintBottom_toBottomOf="@+id/navHeaderImage"
+        app:layout_constraintBottom_toBottomOf="@+id/launchNavHeaderIcon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/navHeaderImage" />
-
-    <TextView
-        android:id="@+id/navHeaderPointsRecord"
-        style="@style/AppTextStyle.Dark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/navHeaderPointsIcon"
-        app:layout_constraintStart_toEndOf="@+id/navHeaderPointsIcon"
-        app:layout_constraintTop_toTopOf="@+id/navHeaderPointsIcon" />
-
-    <ImageView
-        android:id="@+id/navHeaderPointsIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_star"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/navHeaderImage" />
+        app:layout_constraintStart_toEndOf="@+id/launchNavHeaderIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

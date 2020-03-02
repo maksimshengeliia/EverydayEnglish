@@ -16,4 +16,18 @@
     <string name="answer_button">Answer</string>
     <string name="try_again_button">try again</string>
     <string name="go_main_menu_button">go to main menu</string>
+    <string name="intro_beginner_btn">beginner</string>
+    <string name="intro_advanced_btn">advanced</string>
+    <string name="intro_next_btn">next</string>
+    <string name="intro_username_hint">mickJagger14</string>
+    <string name="intro_enter_title">Come up with your username</string>
+    <string name="radio_finished">finished</string>
+    <string name="intro_level_title">Choose your language level</string>
+    <string name="intro_invalid_name_message">Invalid name</string>
+    <string name="description_header_icon">header icon</string>
+    <string name="description_failed_icon">failed icon</string>
+    <string name="description_passed_icon">passed icon</string>
+    <string name="description_language_level">language level icon</string>
+    <string name="test_progress">progress: %1$s</string>
+    <string name="toolbar_progress">%1$s / %2$s</string>
 </resources>

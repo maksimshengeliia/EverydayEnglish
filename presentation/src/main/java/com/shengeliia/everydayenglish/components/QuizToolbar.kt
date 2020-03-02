@@ -7,6 +7,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import com.shengeliia.everydayenglish.R
+import com.shengeliia.everydayenglish.utils.dpToPx
 
 class QuizToolbar : FrameLayout {
     constructor(context: Context) : super(context)
@@ -25,7 +26,7 @@ class QuizToolbar : FrameLayout {
     var onBackButtonPressedListener: (() -> Unit)? = null
 
     init {
-        progressBar.barHeight = 10
+        progressBar.barHeight = dpToPx(context, 3)
         addView(
             progressBar,
             LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT).apply {
@@ -33,15 +34,15 @@ class QuizToolbar : FrameLayout {
             }
         )
 
-
         backButton.setOnClickListener {
             onBackButtonPressedListener?.invoke()
         }
         backButton.setImageResource(R.drawable.ic_back_arrow)
         addView(
             backButton,
-            LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT).apply {
+            LayoutParams(dpToPx(context, 30), dpToPx(context, 30)).apply {
                 gravity = Gravity.START or Gravity.CENTER_VERTICAL
+                marginStart = dpToPx(context, 10)
             }
         )
 
@@ -59,19 +60,13 @@ class QuizToolbar : FrameLayout {
         showProgressText()
     }
 
-    fun addProgress(progress: Boolean) {
-        finishedQuestionNumber++
-        progressBar.addProgress(progress)
-        showProgressText()
-    }
-
     fun setQuestionNumber(num: Int) {
         questionNumber = num
         progressBar.barsCount = num
     }
 
     private fun showProgressText() {
-        progressText.text = "$finishedQuestionNumber / $questionNumber"
+        progressText.text = context.getString(R.string.toolbar_progress, finishedQuestionNumber.toString(), questionNumber.toString())
     }
 
 }

@@ -32,4 +32,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/radio_started" />
+
+
+    <RadioButton
+        android:id="@+id/radio_finished"
+        style="@style/AppTextStyle.FilterButton"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/radio_finished" />
 </RadioGroup>

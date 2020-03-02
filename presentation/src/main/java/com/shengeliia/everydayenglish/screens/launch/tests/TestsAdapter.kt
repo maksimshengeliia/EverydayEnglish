@@ -1,6 +1,5 @@
 package com.shengeliia.everydayenglish.screens.launch.tests
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,9 +8,8 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.shengeliia.domain.cases.State
+import com.shengeliia.domain.TestsState
 import com.shengeliia.domain.models.Test
-import com.shengeliia.domain.cases.validateData
 import com.shengeliia.everydayenglish.R
 
 class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), RadioGroup.OnCheckedChangeListener {
@@ -19,30 +17,31 @@ class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), Radio
     var onItemClickListener: OnItemClickListener? = null
     var onItemLongClickListener: OnItemLongClickListener? = null
     private var list: List<Test> = emptyList()
+    private var filterList: List<Test> = emptyList()
         set(value) {
             field = value
-            currentData = value
-        }
-
-    private var state = State.ALL
-        set(value) {
-            field = value
-            currentData = list
-        }
-
-    private var currentData: List<Test> = emptyList()
-        set(value) {
-            field = validateData(value, state)
             notifyDataSetChanged()
         }
 
-    override fun getItemCount() = currentData.size
+    override fun getItemCount() = filterList.size
 
     override fun onBindViewHolder(holder: TestsViewHolder, position: Int) {
-        val test = currentData[position]
+        val test = filterList[position]
         holder.testId = test.id
         holder.title.text = test.name
-        holder.progress.text = "${test.solved}/${test.count}"
+
+        val progress = test.quizzesSolved.toFloat() / test.count * 100
+        holder.progress.apply {
+            text = context.getString(R.string.test_progress, progress.toInt().toString())
+        }
+
+        val icon = when(test.state) {
+            TestsState.STARTED -> R.drawable.ic_test_started
+            TestsState.FINISHED -> R.drawable.ic_test_finished
+            TestsState.NEW -> R.drawable.ic_test_new
+        }
+
+        holder.icon.setImageResource(icon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TestsViewHolder {
@@ -51,6 +50,20 @@ class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), Radio
 
     fun updateData(list: List<Test>) {
         this.list = list
+        this.filterList = filterList(list)
+    }
+
+    private fun filterList(list: List<Test>, testsState: TestsState? = null) = when(testsState) {
+        TestsState.NEW -> list.filter {
+            it.state == TestsState.NEW
+        }
+        TestsState.STARTED -> list.filter {
+            it.state == TestsState.STARTED
+        }
+        TestsState.FINISHED -> list.filter {
+            it.state == TestsState.FINISHED
+        }
+        else -> list
     }
 
     interface OnItemClickListener {
@@ -62,18 +75,18 @@ class TestsAdapter : RecyclerView.Adapter<TestsAdapter.TestsViewHolder>(), Radio
     }
 
     override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
-        when (checkedId) {
+        when(checkedId) {
             R.id.radio_all -> {
-                Log.d("super", "radio_all")
-                state = State.ALL
+                filterList = filterList(list)
             }
             R.id.radio_new -> {
-                Log.d("super", "radio_new")
-                state = State.NEW
+                filterList = filterList(list, TestsState.NEW)
             }
             R.id.radio_started -> {
-                Log.d("super", "radio_started")
-                state = State.STARTED
+                filterList = filterList(list, TestsState.STARTED)
+            }
+            R.id.radio_finished -> {
+                filterList = filterList(list, TestsState.FINISHED)
             }
         }
     }

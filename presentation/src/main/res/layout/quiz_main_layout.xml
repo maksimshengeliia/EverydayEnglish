@@ -9,28 +9,31 @@
         android:layout_height="wrap_content">
 
         <include
-            android:id="@+id/quizRadioBar"
+            android:id="@+id/quizMainRadioBar"
             layout="@layout/quiz_radio_bar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quizQuestionText" />
+            app:layout_constraintTop_toBottomOf="@+id/quizMainQuestion" />
 
         <TextView
-            android:id="@+id/quizQuestionText"
+            android:id="@+id/quizMainQuestion"
             style="@style/AppTextStyle.Title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
             android:text=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/quizButton"
+            android:id="@+id/quizMainButton"
             style="@style/AppTextStyle.SimpleButton"
             android:stateListAnimator="@null"
             android:layout_width="match_parent"
@@ -45,6 +48,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/quizRadioBar" />
+            app:layout_constraintTop_toBottomOf="@id/quizMainRadioBar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
