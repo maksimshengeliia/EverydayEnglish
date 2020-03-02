@@ -6,7 +6,7 @@
 * Всегда можно обратиться к серверу, чтобы загрузить последние тесты движением свайп вниз.
 * Нажимая на определённый тест, юзер переходит на активити с тестом и решает его.
 
-##### [Ссылка на апк]("https://maksimshengeliia.azurewebsites.net/everydayenglish/res/app_test.apk")
+<a href="https://maksimshengeliia.azurewebsites.net/everydayenglish/res/app_test.apk">Ссылка на apk</a>
 
 
-![](https://maksimshengeliia.azurewebsites.net/englisheveryday/res/presentation.gif)
+<img src="https://maksimshengeliia.azurewebsites.net/englisheveryday/res/presentation.gif" width="300" height="530"/>
